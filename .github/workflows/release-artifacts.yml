@@ -25,7 +25,7 @@ jobs:
 
       - name: Set up Java
         # actions/setup-java@v5
-        uses: actions/setup-java@be666c2fcd27ec809703dec50e508c2fdc7f6654
+        uses: actions/setup-java@1bcf9fb12cf4aa7d266a90ae39939e61372fe520
         with:
           distribution: temurin
           java-version: '17'
@@ -190,13 +190,13 @@ jobs:
 
       - name: Attest release JAR provenance
         # actions/attest@v4.1.0
-        uses: actions/attest@59d89421af93a897026c735860bf21b6eb4f7b26
+        uses: actions/attest@a1948c3f048ba23858d222213b7c278aabede763
         with:
           subject-path: release-artifacts/LoadBalancerPro-${{ env.RELEASE_VERSION }}.jar
 
       - name: Attest release JAR SBOM
         # actions/attest@v4.1.0
-        uses: actions/attest@59d89421af93a897026c735860bf21b6eb4f7b26
+        uses: actions/attest@a1948c3f048ba23858d222213b7c278aabede763
         with:
           subject-path: release-artifacts/LoadBalancerPro-${{ env.RELEASE_VERSION }}.jar
           sbom-path: release-artifacts/LoadBalancerPro-${{ env.RELEASE_VERSION }}-bom.json
